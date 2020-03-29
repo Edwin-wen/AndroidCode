@@ -32,10 +32,7 @@ public class SplashActivity extends Activity {
         FrameLayout linearLayout = findViewById(R.id.splash);
         linearLayout.setSystemUiVisibility(View.GONE);
         task = new StartTask();
-        mMainHandler.postDelayed(task, 3000);
-//        Intent intent = new Intent(SplashActivity.this, MainActivity.class);
-//        startActivity(intent);
-//        finish();
+        mMainHandler.postDelayed(task, 1000);
     }
 
     private class StartTask implements Runnable {
