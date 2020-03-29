@@ -3,6 +3,7 @@ package com.example.edwin.knowledgecode.activity.fragment;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -13,6 +14,8 @@ import android.widget.FrameLayout;
 
 import com.example.edwin.knowledgecode.R;
 
+import java.util.concurrent.ThreadPoolExecutor;
+
 public class ViewFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private String mParam1;
@@ -21,6 +24,7 @@ public class ViewFragment extends Fragment {
     private View mAttachView;
 
     public ViewFragment() {
+        Thread
     }
 
     public static ViewFragment newInstance(String param1, String param2) {
