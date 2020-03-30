@@ -1,7 +1,4 @@
-package com.example.edwin.javalib.design_pattern.singleton;
-
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.locks.ReentrantLock;
+package com.example.edwin.javalib.design_pattern.create.singleton;
 
 public class SingleTon {
 
@@ -26,7 +23,6 @@ public class SingleTon {
     private static volatile SingleTon sInstance2 = null;
 
     public static synchronized SingleTon getInstance2() {
-        ReentrantLock
         if (sInstance2 == null) {
             sInstance2 = new SingleTon();
         }
