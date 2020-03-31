@@ -24,7 +24,7 @@ public class MultiProcessService extends Service {
             if (mBean == null) {
                 mBean = new MultiBean("aaa");
             }
-            mBean.setShareData("服务端数据");
+            mBean.setShareData("黑恶嘿嘿额");
             Log.e("多进程测试", "服务端设置了数据=====");
             return mBean;
         }
@@ -34,6 +34,12 @@ public class MultiProcessService extends Service {
 
         }
     };
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        Log.e("多进程测试","onCreate");
+    }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {

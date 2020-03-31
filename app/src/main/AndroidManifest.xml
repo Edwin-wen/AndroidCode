@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.example.edwin.knowledgecode">
+    package="com.example.edwin.knowledgecode">
     <!-- 权限管理 -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:name=".MyApp"
@@ -13,34 +13,30 @@
         android:roundIcon="@mipmap/main"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".servicetest.ServiceTestActivity">
-        </activity>
+        <activity android:name=".process.ProcessActivity"></activity>
+        <activity android:name=".servicetest.ServiceTestActivity"></activity>
 
         <service
             android:name=".servicetest.OtherProcessService"
             android:enabled="true"
-            android:process=".otherProcess"
-            android:exported="true">
-        </service>
+            android:exported="true"
+            android:process=".otherProcess"></service>
 
-        <activity android:name=".mulitprocess.MulitProcessActivity">
-        </activity>
-        <activity android:name=".filetest.FileTestActivity">
-        </activity>
+        <activity android:name=".mulitprocess.MulitProcessActivity"></activity>
+        <activity android:name=".filetest.FileTestActivity"></activity>
         <activity
             android:name=".main.SplashActivity"
             android:launchMode="singleTop"
             android:theme="@style/SplashTheme">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".main.MainActivity"
-            android:launchMode="singleTask">
-        </activity>
+            android:launchMode="singleTask"></activity>
     </application>
 
 </manifest>
