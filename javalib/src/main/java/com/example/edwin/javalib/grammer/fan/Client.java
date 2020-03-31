@@ -13,10 +13,10 @@ public class Client {
         List<? extends Base> list1 = new ArrayList<>();
         ParentBase parentBase = new ParentBase();
         SonBase sonBase = new SonBase();
-        list.add(parentBase);
-        list1.add(sonBase);
-
-        Test<SonBase> test = new Test<>();
-        Test<ParentBase> test1 = new Test<>();
+//        list.add(parentBase);
+//        list1.add(sonBase);
+//
+//        Test<SonBase> test = new Test<>();
+//        Test<ParentBase> test1 = new Test<>();
     }
 }
