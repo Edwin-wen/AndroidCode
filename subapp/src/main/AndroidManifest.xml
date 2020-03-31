@@ -4,10 +4,19 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher_sub"
+        android:icon="@drawable/sub"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <service
+            android:name=".mulitprocess.MultiProcessService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter >
+                <action android:name="multiprocess_message"/>
+            </intent-filter>
+        </service>
+
         <activity android:name=".SubMainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
