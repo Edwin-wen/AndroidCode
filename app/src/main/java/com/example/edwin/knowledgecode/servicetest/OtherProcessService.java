@@ -27,6 +27,11 @@ public class OtherProcessService extends Service {
             if (mBean == null) {
                 mBean = new MultiBean("aaa");
             }
+            try {
+                Thread.sleep(3000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             mBean.setShareData("服务端数据");
             Log.e("服务测试", "服务端设置了数据=====");
             return mBean;

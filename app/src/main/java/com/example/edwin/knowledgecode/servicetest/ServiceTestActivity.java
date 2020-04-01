@@ -36,6 +36,14 @@ public class ServiceTestActivity extends AppCompatActivity implements View.OnCli
         bindService(intent, connection, Context.BIND_AUTO_CREATE);
     }
 
+    private void startIntentService() {
+//        Intent intent = new Intent();
+//        intent.setAction("action_service_aaaa");
+//        intent.setPackage("com.example.edwin.knowledgecode.servicetest");
+        IntentActionService.startActionBaz(this, "a", "b");
+        IntentActionService.startActionFoo(this, "a", "b");
+    }
+
     private ServiceConnection connection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
@@ -67,10 +75,15 @@ public class ServiceTestActivity extends AppCompatActivity implements View.OnCli
                 bindService();
                 break;
             case R.id.btn2:
+                startIntentService();
                 break;
             case R.id.btn3:
                 try {
+                    long time = System.currentTimeMillis();
+                    // 说明默认aidl是阻塞当前线程的
+                    Log.d("测试Binder时间", String.valueOf(time));
                     String str = controller.getMultiBean().getShareData();
+                    Log.d("测试Binder时间", String.valueOf(System.currentTimeMillis() - time) + "  " + String.valueOf(System.currentTimeMillis()));
                     textView.setText(str);
                 } catch (RemoteException e) {
                     e.printStackTrace();

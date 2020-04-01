@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.edwin.knowledgecode">
-    <!-- 权限管理 -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
+    <!-- 权限管理 -->
     <application
         android:name=".MyApp"
         android:allowBackup="true"
@@ -13,17 +11,12 @@
         android:roundIcon="@mipmap/main"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".process.ProcessActivity"></activity>
-        <activity android:name=".servicetest.ServiceTestActivity"></activity>
+        <activity android:name=".servicetest.ServiceTestActivity" />
 
-        <service
-            android:name=".servicetest.OtherProcessService"
-            android:enabled="true"
-            android:exported="true"
-            android:process=".otherProcess"></service>
+        <activity android:name=".mulitprocess.MulitProcessActivity" />
 
-        <activity android:name=".mulitprocess.MulitProcessActivity"></activity>
-        <activity android:name=".filetest.FileTestActivity"></activity>
+        <activity android:name=".filetest.FileTestActivity" />
+
         <activity
             android:name=".main.SplashActivity"
             android:launchMode="singleTop"
@@ -36,7 +29,23 @@
         </activity>
         <activity
             android:name=".main.MainActivity"
-            android:launchMode="singleTask"></activity>
+            android:launchMode="singleTask" />
+        <service
+            android:name=".servicetest.IntentActionService"
+            android:process=".intentActionProcess"
+            android:exported="true">
+            <intent-filter >
+                <action android:name="action_service_aaaa"/>
+            </intent-filter>
+        </service>
+        <service
+            android:name=".servicetest.OtherProcessService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=".otherProcess" />
     </application>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
 </manifest>

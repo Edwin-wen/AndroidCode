@@ -23,17 +23,6 @@ public class MulitProcessActivity extends AppCompatActivity implements View.OnCl
         public void onServiceConnected(ComponentName name, IBinder service) {
             controller = IBeanController.Stub.asInterface(service);
             Log.e("多进程测试", "调用成功");
-//            try {
-//                controller.setMultiBean(new MultiBean("客户端数据"));
-//                Log.e("多进程测试", "客户端设置了数据=====");
-//            } catch (RemoteException e) {
-//                e.printStackTrace();
-//            }
-//            try {
-//                Log.e("多进程测试", "客户端用服务端改的数据" + controller.getMultiBean().getShareData());
-//            } catch (RemoteException e) {
-//                e.printStackTrace();
-//            }
         }
 
         @Override
@@ -63,11 +52,11 @@ public class MulitProcessActivity extends AppCompatActivity implements View.OnCl
     @Override
     protected void onStop() {
         super.onStop();
-        unbindService(connection);
     }
 
     @Override
     protected void onDestroy() {
+        unbindService(connection);
         super.onDestroy();
     }
 
