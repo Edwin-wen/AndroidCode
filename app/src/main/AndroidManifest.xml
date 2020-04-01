@@ -2,7 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.edwin.knowledgecode">
 
-    <!-- 权限管理 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:name=".MyApp"
         android:allowBackup="true"
@@ -11,12 +13,9 @@
         android:roundIcon="@mipmap/main"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".multiapp.ClientActivity"></activity>
         <activity android:name=".servicetest.ServiceTestActivity" />
-
-        <activity android:name=".mulitprocess.MulitProcessActivity" />
-
         <activity android:name=".filetest.FileTestActivity" />
-
         <activity
             android:name=".main.SplashActivity"
             android:launchMode="singleTop"
@@ -30,12 +29,13 @@
         <activity
             android:name=".main.MainActivity"
             android:launchMode="singleTask" />
+
         <service
             android:name=".servicetest.IntentActionService"
-            android:process=".intentActionProcess"
-            android:exported="true">
-            <intent-filter >
-                <action android:name="action_service_aaaa"/>
+            android:exported="true"
+            android:process=".intentActionProcess">
+            <intent-filter>
+                <action android:name="action_service_aaaa" />
             </intent-filter>
         </service>
         <service
@@ -44,8 +44,5 @@
             android:exported="true"
             android:process=".otherProcess" />
     </application>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
 </manifest>

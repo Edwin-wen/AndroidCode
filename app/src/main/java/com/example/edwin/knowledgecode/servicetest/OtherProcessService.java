@@ -4,42 +4,30 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 import android.os.RemoteException;
-import android.util.Log;
 
-import com.example.edwin.knowledgecode.mulitprocess.IBeanController;
-import com.example.edwin.knowledgecode.mulitprocess.MultiBean;
+import com.example.edwin.androidlib.multiapp.IDataChanel;
+import com.example.edwin.androidlib.multiapp.ShareData;
 
 public class OtherProcessService extends Service {
     public OtherProcessService() {
     }
 
-    private IBinder mBinder = new IBeanController.Stub() {
-
-        private MultiBean mBean = null;
-
+    private IBinder mBinder = new IDataChanel.Stub() {
         @Override
-        public void setMultiBean(MultiBean bean) throws RemoteException {
-            mBean = bean;
+        public void setShareData(ShareData data) throws RemoteException {
+
         }
 
         @Override
-        public MultiBean getMultiBean() throws RemoteException {
-            if (mBean == null) {
-                mBean = new MultiBean("aaa");
-            }
+        public ShareData getShareData() throws RemoteException {
+            ShareData data = new ShareData();
+            data.setData("阻塞3秒的数据");
             try {
                 Thread.sleep(3000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            mBean.setShareData("服务端数据");
-            Log.e("服务测试", "服务端设置了数据=====");
-            return mBean;
-        }
-
-        @Override
-        public void basicTypes(int anInt, long aLong, boolean aBoolean, float aFloat, double aDouble, String aString) throws RemoteException {
-
+            return data;
         }
     };
 
