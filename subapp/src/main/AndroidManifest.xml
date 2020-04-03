@@ -8,12 +8,27 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <service
-            android:name=".multiapp.RemoteAppService"
+        <provider
+            android:name=".multiapp.RemoteContentProvider"
+            android:authorities="remote.content.provider"
             android:enabled="true"
             android:exported="true">
 
-        </service>
+        </provider>
+
+        <receiver
+            android:name=".multiapp.RemoteAppReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter android:priority="4">
+                <action android:name="app_broadcast_action" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".multiapp.RemoteAppService"
+            android:enabled="true"
+            android:exported="true" />
 
         <activity android:name=".SubMainActivity">
             <intent-filter>

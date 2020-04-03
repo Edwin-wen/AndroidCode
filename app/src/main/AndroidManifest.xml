@@ -13,7 +13,17 @@
         android:roundIcon="@mipmap/main"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".multiapp.ClientActivity"></activity>
+        <receiver
+            android:name=".broadcast.StaticReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter android:priority="100">
+                <action android:name="app_broadcast_action"/>
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".broadcast.BroadcastActivity" />
+        <activity android:name=".multiapp.ClientActivity" />
         <activity android:name=".servicetest.ServiceTestActivity" />
         <activity android:name=".filetest.FileTestActivity" />
         <activity
