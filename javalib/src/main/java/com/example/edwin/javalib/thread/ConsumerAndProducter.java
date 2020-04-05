@@ -2,13 +2,18 @@ package com.example.edwin.javalib.thread;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.Semaphore;
 import java.util.concurrent.ThreadPoolExecutor;
 
 public class ConsumerAndProducter {
 
     public static void main(String[] args) {
-        ConsumerAndProducter cs = new ConsumerAndProducter();
-        cs.startTask();
+//        ConsumerAndProducter cs = new ConsumerAndProducter();
+//        cs.startTask();
+        Thread thread = new Thread();
+        thread.setName("myThread");
+        thread.start();
+        thread.getName();
     }
 
     private volatile boolean isInterput = false;

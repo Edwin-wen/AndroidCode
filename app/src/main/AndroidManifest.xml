@@ -13,12 +13,14 @@
         android:roundIcon="@mipmap/main"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".nettest.NetTestActivity"></activity>
+
         <receiver
             android:name=".broadcast.StaticReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter android:priority="100">
-                <action android:name="app_broadcast_action"/>
+                <action android:name="app_broadcast_action" />
             </intent-filter>
         </receiver>
 
