@@ -1,13 +1,15 @@
 package com.example.edwin.cpluslib;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class CppMainActivity extends AppCompatActivity {
 
-    // Used to load the 'native-lib' library on application startup.
+    /**
+     * 生成的动态包so就得有相同的包名和目录结构才可以
+     * 动态包.so，静态包.a
+     */
     static {
         System.loadLibrary("native-lib");
     }
@@ -15,11 +17,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_cpp_main);
 
         // Example of a call to a native method
         TextView tv = findViewById(R.id.sample_text);
-        tv.setText(stringFromJNI());
+        tv.setText(getString());
     }
 
     /**
@@ -27,4 +29,8 @@ public class MainActivity extends AppCompatActivity {
      * which is packaged with this application.
      */
     public native String stringFromJNI();
+
+    public native void setStringToJNI();
+
+    public native String getString();
 }
