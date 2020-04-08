@@ -1,5 +1,6 @@
 package com.example.edwin.knowledgecode.main;
 
+import com.example.edwin.knowledgecode.anim.AnimTestActivity;
 import com.example.edwin.knowledgecode.broadcast.BroadcastActivity;
 import com.example.edwin.knowledgecode.filetest.FileTestActivity;
 import com.example.edwin.knowledgecode.main.fragment.dummy.FragmentListItem;
@@ -20,6 +21,7 @@ public class ItemUtil {
         androidfuncs.put("多进程通信测试", ClientActivity.class);
         androidfuncs.put("服务Service测试", ServiceTestActivity.class);
         androidfuncs.put("广播测试", BroadcastActivity.class);
+        androidfuncs.put("动画测试", AnimTestActivity.class);
         for (Map.Entry<String, Class<?>> entry : androidfuncs.entrySet()) {
             FragmentListItem item = new FragmentListItem(entry.getKey(), entry.getValue());
             list.add(item);

@@ -80,6 +80,12 @@ public class BaseTestActivity extends AppCompatActivity implements View.OnClickL
         return view;
     }
 
+    protected void addView(View view) {
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT, 1);
+        view.setLayoutParams(params);
+        mContatiner.addView(view);
+    }
 
     @Override
     public void onClick(View v) {
