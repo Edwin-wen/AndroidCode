@@ -1,0 +1,19 @@
+{
+  "buildFiles": [
+    "/home/edwin/Android/Sdk/ndk-bundle/build/cmake/android.toolchain.cmake",
+    "/home/edwin/ADisk/github/code/AndroidCode/cpluslib/app/src/main/cpp/CMakeLists.txt",
+    "/home/edwin/Android/Sdk/ndk-bundle/build/cmake/platforms.cmake"
+  ],
+  "cleanCommands": [
+    "/home/edwin/Android/Sdk/cmake/3.10.2.4988404/bin/ninja -C \"/home/edwin/ADisk/github/code/AndroidCode/cpluslib/app/.cxx/cmake/debug/arm64-v8a\" clean"
+  ],
+  "buildTargetsCommand": "/home/edwin/Android/Sdk/cmake/3.10.2.4988404/bin/ninja  -C \"/home/edwin/ADisk/github/code/AndroidCode/cpluslib/app/.cxx/cmake/debug/arm64-v8a\" {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {
+    "native-lib-Debug-arm64-v8a": {
+      "artifactName": "native-lib",
+      "buildCommand": "/home/edwin/Android/Sdk/cmake/3.10.2.4988404/bin/ninja -C \"/home/edwin/ADisk/github/code/AndroidCode/cpluslib/app/.cxx/cmake/debug/arm64-v8a\" native-lib",
+      "abi": "arm64-v8a",
+      "output": "/home/edwin/ADisk/github/code/AndroidCode/cpluslib/app/build/intermediates/cmake/debug/obj/arm64-v8a/libnative-lib.so"
+    }
+  }
+}

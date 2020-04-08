@@ -1,5 +1,6 @@
 package com.example.edwin.knowledgecode.main.fragment;
 
+import android.arch.lifecycle.ViewModelProvider;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -12,6 +13,7 @@ import android.view.ViewGroup;
 
 import com.example.edwin.knowledgecode.R;
 import com.example.edwin.knowledgecode.main.fragment.dummy.FragmentListItem;
+import com.example.edwin.knowledgecode.viewmode.ShareViewMode;
 
 import java.util.List;
 
@@ -22,8 +24,10 @@ public class ItemFragment extends Fragment {
     private OnListFragmentInteractionListener mListener;
 
     private List<FragmentListItem> mItemList;
+    private ShareViewMode mShareMode;
 
     public ItemFragment() {
+//        mShareMode = new ViewModelProvider(getActivity(), null).get(ShareViewMode.class);
     }
 
     public static ItemFragment newInstance(int columnCount) {
@@ -62,6 +66,9 @@ public class ItemFragment extends Fragment {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
             recyclerView.setAdapter(new MyItemRecyclerViewAdapter(mItemList, mListener));
+            if (mShareMode != null) {
+                recyclerView.setRecycledViewPool(mShareMode.getSharePool());
+            }
         }
         return view;
     }

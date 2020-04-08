@@ -1,0 +1,19 @@
+{
+  "buildFiles": [
+    "/home/edwin/Android/Sdk/ndk-bundle/build/cmake/android.toolchain.cmake",
+    "/home/edwin/ADisk/github/code/AndroidCode/cpluslib/app/src/main/cpp/CMakeLists.txt",
+    "/home/edwin/Android/Sdk/ndk-bundle/build/cmake/platforms.cmake"
+  ],
+  "cleanCommands": [
+    "/home/edwin/Android/Sdk/cmake/3.10.2.4988404/bin/ninja -C \"/home/edwin/ADisk/github/code/AndroidCode/cpluslib/app/.cxx/cmake/release/x86_64\" clean"
+  ],
+  "buildTargetsCommand": "/home/edwin/Android/Sdk/cmake/3.10.2.4988404/bin/ninja  -C \"/home/edwin/ADisk/github/code/AndroidCode/cpluslib/app/.cxx/cmake/release/x86_64\" {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {
+    "native-lib-Release-x86_64": {
+      "artifactName": "native-lib",
+      "buildCommand": "/home/edwin/Android/Sdk/cmake/3.10.2.4988404/bin/ninja -C \"/home/edwin/ADisk/github/code/AndroidCode/cpluslib/app/.cxx/cmake/release/x86_64\" native-lib",
+      "abi": "x86_64",
+      "output": "/home/edwin/ADisk/github/code/AndroidCode/cpluslib/app/build/intermediates/cmake/release/obj/x86_64/libnative-lib.so"
+    }
+  }
+}
