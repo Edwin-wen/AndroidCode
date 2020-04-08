@@ -1,7 +1,11 @@
 package com.example.edwin.knowledgecode.anim;
 
 import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
 import android.os.Bundle;
+import android.view.animation.AccelerateDecelerateInterpolator;
+import android.view.animation.BounceInterpolator;
+import android.view.animation.LinearInterpolator;
 
 import com.example.edwin.androidlib.BaseTestActivity;
 
@@ -10,7 +14,7 @@ public class AnimTestActivity extends BaseTestActivity implements BaseTestActivi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        String[] strings = {"贝塞尔曲线动画测试"};
+        String[] strings = {"属性动画", "值动画"};
         initFunc(strings, this);
         addTestView();
     }
@@ -22,19 +26,36 @@ public class AnimTestActivity extends BaseTestActivity implements BaseTestActivi
         addView(mView);
     }
 
-    private void startAnim() {
-        ObjectAnimator animator = new ObjectAnimator();
-        animator.setTarget(mView);
+    private void startObjectAnim() {
+        ObjectAnimator animator = ObjectAnimator.ofInt(mView, "index", 0, 50);
+        animator.setInterpolator(new LinearInterpolator());
+        animator.setDuration(1000);
+        animator.start();
+    }
+
+    private void startValueAnim() {
+        ValueAnimator valueAnimator = ValueAnimator.ofObject(new PosAnimValutor(), 0, 50);
+        valueAnimator.setInterpolator(new BounceInterpolator());
+        valueAnimator.setDuration(3000);
+//        valueAnimator.setTarget(mView);
+        valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                int index = (int) animation.getAnimatedValue();
+                mView.setIndex(index);
+            }
+        });
+        valueAnimator.start();
     }
 
     @Override
     public void handleFunc1() {
-
+        startObjectAnim();
     }
 
     @Override
     public void handleFunc2() {
-
+        startValueAnim();
     }
 
     @Override

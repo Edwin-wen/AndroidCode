@@ -29,7 +29,7 @@ public class AnimTestView extends View {
     private PointF bezierPoint = new PointF();
     private Paint mPaint  = new Paint(Paint.ANTI_ALIAS_FLAG);
 
-    private int index = 20;
+    private int index = 0;
 
     public int getIndex() {
         return index;
@@ -37,6 +37,7 @@ public class AnimTestView extends View {
 
     public void setIndex(int index) {
         this.index = index;
+        invalidate();
     }
 
     @Override
