@@ -4,6 +4,7 @@ import com.example.edwin.javalib.grammer.annation.AnnonationUtil;
 import com.example.edwin.javalib.grammer.annation.ClassByAnnotation;
 import com.example.edwin.javalib.grammer.annation.MyAnnotation;
 import com.example.edwin.javalib.grammer.intern.InternClassTest;
+import com.example.edwin.javalib.thread.BlockingQueueTest;
 
 import java.nio.ByteBuffer;
 
@@ -15,6 +16,7 @@ public class MainTest {
         InternClassTest.MyStaticClass staticClass = new InternClassTest.MyStaticClass();
         staticClass.toString();
         ByteBuffer buffer = ByteBuffer.allocate(1024);
+
     }
 
     private static void testAnnotation() {
