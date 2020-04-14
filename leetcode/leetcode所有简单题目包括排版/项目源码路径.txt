@@ -1,0 +1,3 @@
+leetcode所有简单题目包括排版，项目的源码路径https://gitee.com/lizhaoandroid/py-test，
+
+详细可看 https://blog.csdn.net/cmqwan/article/details/82467282
